@@ -18,7 +18,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
-	"gopkg.in/telegram-bot-api.v4"
+	"github.com/go-telegram-bot-api/telegram-bot-api"
 	"gopkg.in/yaml.v2"
 
 	"html/template"
@@ -398,6 +398,7 @@ func main() {
 	}
 
 	bot_tmp, err := tgbotapi.NewBotAPIWithAPIEndpoint(cfg.TelegramToken, cfg.TelegramApiUrl)
+	                         NewBotAPIWithAPIEndpoint
 	if err != nil {
 		log.Fatal(err)
 	}
