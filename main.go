@@ -45,6 +45,7 @@ type Alert struct {
 }
 
 type Config struct {
+    TelegramApiUrl    string `yaml:"telegram_api_url"`
 	TelegramToken     string `yaml:"telegram_token"`
 	TemplatePath      string `yaml:"template_path"`
 	TimeZone          string `yaml:"time_zone"`
@@ -396,7 +397,7 @@ func main() {
 		cfg.SplitMessageBytes = 4000
 	}
 
-	bot_tmp, err := tgbotapi.NewBotAPI(cfg.TelegramToken)
+	bot_tmp, err := tgbotapi.NewBotAPIWithAPIEndpoint(cfg.TelegramToken, apiEndpoint cfg.TelegramApiUrl)
 	if err != nil {
 		log.Fatal(err)
 	}
