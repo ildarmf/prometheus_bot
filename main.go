@@ -397,7 +397,7 @@ func main() {
 		cfg.SplitMessageBytes = 4000
 	}
 
-	bot_tmp, err := tgbotapi.NewBotAPIWithAPIEndpoint(cfg.TelegramToken, apiEndpoint cfg.TelegramApiUrl)
+	bot_tmp, err := tgbotapi.NewBotAPI(cfg.TelegramToken, cfg.TelegramApiUrl)
 	if err != nil {
 		log.Fatal(err)
 	}
